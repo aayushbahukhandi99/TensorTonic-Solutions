@@ -21,4 +21,8 @@ def gaussian_kernel(size: int, sigma: float) -> list:
 
         kernel.append(row)
 
-    return [[val / total for val in row] for row in kernel]
+    for i in range(size):
+        for j in range(size):
+            kernel[i][j] /= total
+
+    return kernel
